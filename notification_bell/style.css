@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    place-items: center;
+    display: grid;
+    height: 100vh;
+}
+
+/* Animation in CSS */
+/* div {
+    animation-name: example;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  div {
+    animation: example 5s linear 2s infinite alternate;
+  } */
+  
+.notification{
+    color: #fff;
+    position: relative;
+    animation: bell 1s linear infinite alternate  ;
+    transform-origin: top;
+}
+@keyframes bell{
+  0% {
+    transform: rotate(-20deg);
+  } 
+  100% {
+    transform: rotate(20deg);
+  }  
+}
+.fa-bell{
+    font-size: 200px;   
+}
+.notification::after{
+    content: attr(current-count);
+    position: absolute;
+    top: 0;
+    right: 0; 
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border: 5px solid black;
+}
